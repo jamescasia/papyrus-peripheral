@@ -1,5 +1,5 @@
-// import 'package:papyrus_client/data_models/UserExpense.dart';
-// // import 'package:papyrus_client/data_models/UserExpense.dart';
+// import 'package:papyrus_peripheral/data_models/UserExpense.dart';
+// // import 'package:papyrus_peripheral/data_models/UserExpense.dart';
 
 // class UserExpenseHelper {
 //   UserExpense userExpense;

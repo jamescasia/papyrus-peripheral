@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'HomeScreen.dart';
-import 'package:papyrus_client/helpers/ClipShadowPath.dart';
-import 'package:papyrus_client/helpers/CustomShapeClipper.dart';
-import 'package:papyrus_client/helpers/LongButton.dart';
+import 'package:papyrus_peripheral/helpers/ClipShadowPath.dart';
+import 'package:papyrus_peripheral/helpers/CustomShapeClipper.dart';
+import 'package:papyrus_peripheral/helpers/LongButton.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:papyrus_client/models/AppModel.dart';
+import 'package:papyrus_peripheral/models/AppModel.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'HomeScreen.dart';
-import 'LogInScreen.dart';
+import 'login_screen.dart';
+import 'home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
+    sizeMulW = MediaQuery.of(context).size.width/411.5;
+    sizeMulH = MediaQuery.of(context).size.height/683;
     // Future.delayed(Duration(milliseconds: 1300), () {
     //   Navigator.pushReplacement(
     //       context,
@@ -29,7 +33,7 @@ class SplashScreen extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               if (snapshot.data != null)
-                return HomeScreen();
+                return Home_Screen();
               else
                 return LogInScreen();
             } else if(snapshot.connectionState == ConnectionState.active || snapshot.connectionState == ConnectionState.waiting)
@@ -54,8 +58,8 @@ class SplashFrame extends StatelessWidget {
         child: Center(
             child: Image.asset(
           'assets/icons/3x/papygreen.png',color: Colors.white,
-          height: sizeMul * 100,
-          width: sizeMul * 100,
+          height: sizeMulW * 100,
+          width: sizeMulW * 100,
         )),
       ),
     );
