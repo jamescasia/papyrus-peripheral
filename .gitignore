@@ -9,6 +9,7 @@
 .history
 .svn/
 
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -24,7 +25,7 @@
 .flutter-plugins
 .packages
 .pub-cache/
-.pub/
+.pub/  
 /build/
 
 # Android related
