@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'HomeScreen.dart';
-import 'package:papyrus_client/helpers/ClipShadowPath.dart';
-import 'package:papyrus_client/helpers/CustomShapeClipper.dart';
-import 'package:papyrus_client/data_models/Receipt.dart';
+import 'package:papyrus_peripheral/helpers/ClipShadowPath.dart';
+import 'package:papyrus_peripheral/helpers/CustomShapeClipper.dart';
+import 'package:papyrus_peripheral/data_models/Receipt.dart';
 import 'package:flutter/cupertino.dart';
-import 'ReceiptScreen.dart';
-import 'package:papyrus_client/models/AppModel.dart';
+// import 'ReceiptScreen.dart';
+import 'home_screen.dart';
+import 'package:papyrus_peripheral/models/AppModel.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:intl/intl.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -69,17 +70,17 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                       child: Column(
                         children: <Widget>[
                           SizedBox(
-                            height: 160 * sizeMul,
+                            height: 160 * sizeMulW,
                           ),
                           Container(
-                            width: 300 * sizeMul,
+                            width: 300 * sizeMulW,
                             child: Text(
                               receipt.merchant,
                               // "Jollibee Foods Corporation",
                               maxLines: 2,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 23 * sizeMul,
+                                  fontSize: 23 * sizeMulW,
                                   fontWeight: FontWeight.w800),
                             ),
                           ),
@@ -92,11 +93,11 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               SizedBox(
-                                height: sizeMul * 35,
+                                height: sizeMulW * 35,
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width,
-                                padding: EdgeInsets.only(right: sizeMul * 19),
+                                padding: EdgeInsets.only(right: sizeMulW * 19),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: <Widget>[
@@ -109,28 +110,28 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                       style: TextStyle(
                                           color: Colors.black,
                                           // fontWeight: FontWeight.w600,
-                                          fontSize: sizeMul * 16),
+                                          fontSize: sizeMulW * 16),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(left: sizeMul * 40),
+                                padding: EdgeInsets.only(left: sizeMulW * 40),
                                 child: Text(
                                   "ITEMS",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: sizeMul * 16),
+                                      fontSize: sizeMulW * 16),
                                 ),
                               ),
                               SizedBox(
-                                height: sizeMul * 15,
+                                height: sizeMulW * 15,
                               ),
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: sizeMul * 19,
+                                  horizontal: sizeMulW * 19,
                                 ),
                                 child: Container(
                                   width: MediaQuery.of(context).size.width,
@@ -145,11 +146,11 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: sizeMul * 15),
+                                              fontSize: sizeMulW * 15),
                                         ),
                                       ),
                                       // SizedBox(
-                                      //   width: sizeMul * 140,
+                                      //   width: sizeMulW * 140,
                                       // ),
                                       Expanded(
                                         flex: 1,
@@ -160,7 +161,7 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: sizeMul * 15),
+                                              fontSize: sizeMulW * 15),
                                         ),
                                       ),
                                       Expanded(
@@ -171,11 +172,11 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: sizeMul * 15),
+                                              fontSize: sizeMulW * 15),
                                         ),
                                       ),
                                       // SizedBox(
-                                      //   width: sizeMul * 15,
+                                      //   width: sizeMulW * 15,
                                       // ),
                                       Expanded(
                                         flex: 2,
@@ -185,7 +186,7 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                           style: TextStyle(
                                               color: Colors.black,
                                               fontWeight: FontWeight.w700,
-                                              fontSize: sizeMul * 15),
+                                              fontSize: sizeMulW * 15),
                                         ),
                                       )
                                     ],
@@ -205,10 +206,10 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                 // ]
                               ),
                               SizedBox(
-                                height: 13 * sizeMul,
+                                height: 13 * sizeMulW,
                               ),
                               Container(
-                                padding: EdgeInsets.only(top: sizeMul * 20),
+                                padding: EdgeInsets.only(top: sizeMulW * 20),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -218,7 +219,7 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                       "TOTAL",
                                       style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 17 * sizeMul,
+                                        fontSize: 17 * sizeMulW,
                                         // fontWeight: FontWeight.bold
                                       ),
                                     ),
@@ -236,7 +237,7 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                               : ""),
                                       style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 17 * sizeMul,
+                                          fontSize: 17 * sizeMulW,
                                           fontWeight: FontWeight.w400),
                                     ),
                                   ],
@@ -245,7 +246,7 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                             ],
                           ),
                           Container(
-                            padding: EdgeInsets.only(top: sizeMul * 40),
+                            padding: EdgeInsets.only(top: sizeMulW * 40),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
@@ -258,17 +259,24 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                     "CONTINUE",
                                     style: TextStyle(
                                         color: Colors.black,
-                                        fontSize: 17 * sizeMul,
+                                        fontSize: 17 * sizeMulW,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                ), 
+                                ),
                               ],
                             ),
                           ),
-                          SizedBox(height: sizeMul*30,),
-                          
-                          Text("Made with ❤ \nby AetherApps", textAlign: TextAlign.center,),
-                          SizedBox(height: sizeMul*50,),
+                          SizedBox(
+                            height: sizeMulW * 30,
+                          ),
+
+                          Text(
+                            "Made with ❤ \nby AetherApps",
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: sizeMulW * 50,
+                          ),
                         ],
                       ),
                     ),
@@ -277,11 +285,11 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                       children: <Widget>[
                         ClipShadowPath(
                             shadow: Shadow(
-                                blurRadius: 10 * sizeMul,
-                                offset: Offset(0, sizeMul),
+                                blurRadius: 10 * sizeMulW,
+                                offset: Offset(0, sizeMulW),
                                 color: Colors.black38),
                             clipper: CustomShapeClipper(
-                                sizeMul: sizeMul,
+                                sizeMulW: sizeMulW,
                                 maxWidth: MediaQuery.of(context).size.width,
                                 maxHeight:
                                     MediaQuery.of(context).size.width * 0.38),
@@ -304,10 +312,10 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                           Navigator.pop(context);
                                         },
                                         child: Container(
-                                          width: sizeMul * 40,
+                                          width: sizeMulW * 40,
                                           padding: EdgeInsets.symmetric(
-                                              vertical: 10 * sizeMul),
-                                          // height: sizeMul*40,
+                                              vertical: 10 * sizeMulW),
+                                          // height: sizeMulW*40,
                                           // color: Colors.red,
                                           child: Image.asset(
                                             'assets/icons/3x/back.png',
@@ -320,11 +328,11 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                       ),
                                     ),
                                     Positioned(
-                                      left: sizeMul * 30,
-                                      top: sizeMul * 70,
+                                      left: sizeMulW * 30,
+                                      top: sizeMulW * 70,
                                       child: Text("Receipt",
                                           style: TextStyle(
-                                            fontSize: sizeMul * 35,
+                                            fontSize: sizeMulW * 35,
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                           )),
@@ -332,19 +340,32 @@ class _ShowReceiptScreenStackState extends State<ShowReceiptScreenStack> {
                                   ],
                                 ))),
                         Positioned(
-                            left: homeButtonDist+ sizeMul*32,
-                            bottom: 13,
-                            child: 
-                            
-                      Icon((receipt.category == "Leisure")?FontAwesomeIcons.wineGlassAlt: (receipt.category == "Transportation")?FontAwesomeIcons.bus:(receipt.category == "Food")?FontAwesomeIcons.utensils:(receipt.category == "Necessities")?FontAwesomeIcons.toiletPaper:(receipt.category == "Miscellaneous")?FontAwesomeIcons.campground:FontAwesomeIcons.file,size: sizeMul * 35, color: Colors.lightGreen,),
-                            // Icon(
-                            //   // Icons.image,
-                            //   FontAwesomeIcons.file,
-                            //   size: sizeMul * 35,
-                            //   color: Colors.green,
-                            // )
-                            
-                            )
+                            // right: sizeMul * sizeMul * 12,
+
+                            // right: MediaQuery.of(context).size.width * 0.035,
+                            left: homeButtonDist,
+                            bottom: 0,
+                            // top:100,
+                            child: RaisedButton(
+                              splashColor: greeny.colors[0],
+                              animationDuration: Duration(milliseconds: 100),
+                              shape: CircleBorder(),
+                              elevation: 5,
+                              color: greeny.colors[1],
+                              onPressed: () {
+                                appModel.uploadReceiptToDatabase();
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.18,
+                                height:
+                                    MediaQuery.of(context).size.width * 0.18,
+                                child: Icon(
+                                  Icons.add,
+                                  size: MediaQuery.of(context).size.width * 0.1,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ))
                       ],
                     ),
                   ],
@@ -370,13 +391,13 @@ class ReceiptItemLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextStyle style = TextStyle(
-        fontSize: sizeMul * 17,
+        fontSize: sizeMulW * 17,
         color: Colors.black,
         fontWeight: FontWeight.w300);
 
     return Container(
-      padding:
-          EdgeInsets.symmetric(horizontal: sizeMul * 19, vertical: sizeMul * 9),
+      padding: EdgeInsets.symmetric(
+          horizontal: sizeMulW * 19, vertical: sizeMulW * 9),
       child: Flex(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         direction: Axis.horizontal,
@@ -388,11 +409,11 @@ class ReceiptItemLine extends StatelessWidget {
               style: TextStyle(
                   color: Colors.black,
                   // fontWeight: FontWeight.w900,
-                  fontSize: sizeMul * 15),
+                  fontSize: sizeMulW * 15),
             ),
           ),
           // SizedBox(
-          //   width: sizeMul * 140,
+          //   width: sizeMulW * 140,
           // ),
           Expanded(
             flex: 1,
@@ -403,7 +424,7 @@ class ReceiptItemLine extends StatelessWidget {
               style: TextStyle(
                   color: Colors.black,
                   // fontWeight: FontWeight.w900,
-                  fontSize: sizeMul * 15),
+                  fontSize: sizeMulW * 15),
             ),
           ),
           Expanded(
@@ -418,11 +439,11 @@ class ReceiptItemLine extends StatelessWidget {
               style: TextStyle(
                   color: Colors.black,
                   // fontWeight: FontWeight.w900,
-                  fontSize: sizeMul * 15),
+                  fontSize: sizeMulW * 15),
             ),
           ),
           // SizedBox(
-          //   width: sizeMul * 15,
+          //   width: sizeMulW * 15,
           // ),
           Expanded(
             flex: 2,
@@ -436,7 +457,7 @@ class ReceiptItemLine extends StatelessWidget {
               style: TextStyle(
                   color: Colors.black,
                   // fontWeight: FontWeight.w900,
-                  fontSize: sizeMul * 15),
+                  fontSize: sizeMulW * 15),
             ),
           )
         ],
@@ -444,7 +465,7 @@ class ReceiptItemLine extends StatelessWidget {
     )
 
         // return new Container(
-        //     margin: EdgeInsets.symmetric(vertical: sizeMul * 8),
+        //     margin: EdgeInsets.symmetric(vertical: sizeMulW * 8),
         //     child: Row(
         //       mainAxisSize: MainAxisSize.max,
         //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

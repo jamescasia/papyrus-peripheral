@@ -15,32 +15,24 @@ import 'home_screen.dart';
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
-    sizeMulW = MediaQuery.of(context).size.width/411.5;
-    sizeMulH = MediaQuery.of(context).size.height/683;
+    sizeMulW = MediaQuery.of(context).size.width / 411.5;
+    sizeMulH = MediaQuery.of(context).size.height / 683;
+    homeButtonDist = -0.00023 *
+            (MediaQuery.of(context).size.width *
+                MediaQuery.of(context).size.width) +
+        0.9466 * (MediaQuery.of(context).size.width) -
+        56.372;
     // Future.delayed(Duration(milliseconds: 1300), () {
     //   Navigator.pushReplacement(
     //       context,
     //       CupertinoPageRoute(
     //           builder: (context) =>
 
-    return ScopedModelDescendant<AppModel>(rebuildOnChange: false,builder: (context, child, appModel) {
-      
-      return FutureBuilder(
-          future: 
-          // Future.delayed(Duration(seconds: 3),(){}),
-          appModel.mAuth.currentUser(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              if (snapshot.data != null)
-                return Home_Screen();
-              else
-                return LogInScreen();
-            } else if(snapshot.connectionState == ConnectionState.active || snapshot.connectionState == ConnectionState.waiting)
-                                       
-              return SplashFrame();
-          });
-    });
+    return ScopedModelDescendant<AppModel>(
+        rebuildOnChange: false,
+        builder: (context, child, appModel) {
+          return LogInScreen(); 
+        });
 
     // ));
     // });
@@ -57,7 +49,8 @@ class SplashFrame extends StatelessWidget {
         color: Colors.green,
         child: Center(
             child: Image.asset(
-          'assets/icons/3x/papygreen.png',color: Colors.white,
+          'assets/icons/3x/papygreen.png',
+          color: Colors.white,
           height: sizeMulW * 100,
           width: sizeMulW * 100,
         )),
